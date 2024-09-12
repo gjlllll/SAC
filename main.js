@@ -7,7 +7,7 @@
 			<div id="root" style="width: 100%; height: 100%;">
 			Hello Custom Widget !!!!
 			</div>
-		  `
+		`
 		class Main extends HTMLElement {
 			constructor () {
 			super()
@@ -17,7 +17,24 @@
 				
 			this._root = this._shadowRoot.getElementById('root')
 			}
-		}
 			
+			onCustomWidgetResize (width, height) {
+				this.render()
+			}
+			
+			onCustomWidgetAfterUpdate (changedProps) {
+			}
+			
+			onCustomWidgetDestroy () {
+			}
+			
+			render () {
+				this._root.textContent = 'Hello Custom Widget clientWidth: ${this.clientWidth}, clientHeight: ${this.clientHeight}'
+			}	
+			
+		}
+		
 		customElements.define('com-sap-sac-exercise-gjlee-main', Main)
 	})()
+	
+	
