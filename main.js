@@ -10,12 +10,12 @@
 		`
 		class Main extends HTMLElement {
 			constructor () {
-			super()
+				super()
 				
-			this._shadowRoot = this.attachShadow({ mode: 'open' })
-			this._shadowRoot.appendChild(template.content.cloneNode(true))
+				this._shadowRoot = this.attachShadow({ mode: 'open' })
+				this._shadowRoot.appendChild(template.content.cloneNode(true))
 				
-			this._root = this._shadowRoot.getElementById('root')
+				this._root = this._shadowRoot.getElementById('root')
 			}
 			
 			onCustomWidgetResize (width, height) {
@@ -29,7 +29,7 @@
 			}
 			
 			render () {
-				this._root.textContent = 'Hello Custom Widget clientWidth: ${this.clientWidth}, clientHeight: ${this.clientHeight}'
+				this._root.textContent = 'Hello Custom Widget clientWidth:' ${this.clientWidth}, 'clientHeight:' ${this.clientHeight}
 			}	
 			
 		}
